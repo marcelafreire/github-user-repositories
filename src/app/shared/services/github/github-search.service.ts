@@ -8,7 +8,7 @@ export class GithubSearchService {
 
   constructor(private httpCliente: HttpClient) { }
 
-  getUser() {
-    return this.httpCliente.get('https://api.github.com/users/defunkt')
+  getUser(username: string) {
+    return this.httpCliente.get(`https://api.github.com/users/${username}`)
   }
 }
