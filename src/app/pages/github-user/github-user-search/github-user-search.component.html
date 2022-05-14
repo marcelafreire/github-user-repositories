@@ -1,0 +1,26 @@
+<section >
+    <div class="search-container d-flex flex-sm-row flex-column justify-content-center align-items-center" >
+        <img src="assets/images/github-octocat.png" alt="github">
+        <div class="search-container__input-group">
+            <input class="search-input" [(ngModel)]="username"> 
+            <button class="search-btn" (click)="getUser()">Procurar</button>
+        </div> 
+    </div> 
+    
+    <button (click)="orderRepos('stars')"> Ordenar por Estrelas</button>
+    <button (click)="orderRepos('name')"> Ordenar por Nome do repositório</button>
+
+    <input [(ngModel)]="repoName" (keyup)="searchRepoByName()" placeholder="Pesquisar por nome"/>
+    <input [(ngModel)]="repStars" (keyup)="searchRepoByStars()" placeholder="Pesquisar por quantidade de estrelas"/>
+
+    <div *ngFor="let repo of githubRepos">
+        {{ repo.name }}
+    </div>
+</section>
+
+
+<div id="overlay" class="d-flex justify-content-center align-items-center" *ngIf="loading">
+    <div class="spinner-grow" role="status">
+    </div>
+  </div>
+

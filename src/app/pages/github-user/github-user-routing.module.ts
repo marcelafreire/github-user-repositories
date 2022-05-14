@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserInfosComponent } from './user-infos/user-infos.component';
+import { GithubUserSearchComponent } from './github-user-search/github-user-search.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: UserInfosComponent
+    component: GithubUserSearchComponent
   }
 ];
 

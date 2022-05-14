@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GithubUserRoutingModule } from './github-user-routing.module';
-import { SearchComponent } from './search/search.component';
 import { UserInfosComponent } from './user-infos/user-infos.component';
 import { FormsModule } from '@angular/forms';
+import { GithubUserSearchComponent } from './github-user-search/github-user-search.component';
 
 
 @NgModule({
   declarations: [
-    SearchComponent,
-    UserInfosComponent
+    UserInfosComponent,
+    GithubUserSearchComponent
   ],
   imports: [
     CommonModule,
