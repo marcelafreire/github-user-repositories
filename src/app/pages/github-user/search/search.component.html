@@ -10,7 +10,8 @@
     <button (click)="orderRepos('stars')"> Ordenar por Estrelas</button>
     <button (click)="orderRepos('name')"> Ordenar por Nome do repositório</button>
 
-    <input [(ngModel)]="repoName" (keyup)="searchRepoBy()" placeholder="Pesquise o nome do repositório ou a quantidade de estrelas"/>
+    <input [(ngModel)]="repoName" (keyup)="searchRepoByName()" placeholder="Pesquisar por nome"/>
+    <input [(ngModel)]="repStars" (keyup)="searchRepoByStars()" placeholder="Pesquisar por quantidade de estrelas"/>
 
     <div *ngFor="let repo of githubRepos">
         {{ repo.name }}
