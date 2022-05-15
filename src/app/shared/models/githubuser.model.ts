@@ -1,6 +1,8 @@
 export class GithubUser {
 
     constructor(data?: any) {
+        this.name = data.name;
+        this.login = data.login;
         this.avatar_url = data.avatar_url;
         this.bio = data.bio;
         this.followers = data.followers;
@@ -10,6 +12,8 @@ export class GithubUser {
         this.public_repos = data.public_repos;
         this.repos_url = data.repos_url;
     }
+name: string;
+login: string;
 avatar_url: string;
 bio: string;
 followers: number;

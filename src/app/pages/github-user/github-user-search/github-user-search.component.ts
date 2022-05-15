@@ -9,6 +9,7 @@ import { GithubSearchService } from "src/app/shared/services/github/github-searc
 })
 export class GithubUserSearchComponent {
   username: string;
+  userInfo: GithubUser;
   githubRepos: GithubRepos[] = [];
   githubReposFilter: GithubRepos[] = [];
   repoName: string;
@@ -25,10 +26,12 @@ export class GithubUserSearchComponent {
     // setTimeout(() => {
     this.githubService.getUser(this.username).subscribe({
       next: (user: GithubUser) => {
+        this.userInfo = user;
         this.githubService.getRepositories(user.repos_url).subscribe({
           next: (repos) => {
             this.githubRepos = repos;
             this.githubReposFilter = repos;
+            console.log(this.githubReposFilter)
           },
           error: () => {},
           complete: () => (this.loading = false),

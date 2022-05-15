@@ -1,0 +1,80 @@
+.user-infos {
+    
+    &__profile {
+        background-color: white;
+        width: 20%;
+        border-radius: 5px;
+        box-shadow: $boxShadowLight;
+        padding: 2%;
+        margin-right: 2%;
+        height: 100%;
+        
+        img {
+            width: 40%;
+            border-radius: 50%;
+            margin-top: -6rem;
+        }
+
+        p:nth-of-type(2) {
+            color: $gray300;
+            font-size: 0.9rem;
+        }
+
+        .material-symbols-outlined {
+            font-size: 15px;
+            color: $gray300;
+            margin: 0 1rem 1rem 0;
+        }
+    }
+
+    &__repos {
+        width: 80%;
+
+        .repos-filters {
+            button {
+                border-radius: 100px;
+                border: none;
+                background-color: $blue600;
+                color: white;
+                padding: 1%;
+                padding: 0.2rem 1rem;
+            }
+
+            input {
+                background-color: white;
+                border: none;
+                width: 45%;
+                padding: 0.5rem;
+                border-radius: 100px;
+                box-shadow: $boxShadowLight;
+            }
+
+            span:first-child {
+                width: 70%;
+            }
+        }
+
+        .repos-card {
+            background-color: white;
+            box-shadow: $boxShadowLight;
+            padding: 2%;
+            border-radius: 5px;
+            width: 49%;
+
+            h5 {
+                color: $blue600;
+                margin-bottom: 1rem;
+            }
+
+            .material-symbols-outlined {
+                font-size: 17px;
+                color: $blue600;
+            }
+
+            strong {
+                color: $blue600;
+            }
+        }
+    }
+
+}

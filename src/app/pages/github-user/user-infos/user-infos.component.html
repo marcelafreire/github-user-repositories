@@ -1,0 +1,75 @@
+<Section class="user-infos d-flex flex-sm-row flex-column container mt-5">
+  <div class="user-infos__profile d-flex flex-column align-items-center">
+    <img [src]="userInfo.avatar_url" alt="profile image" />
+    <h5>{{ userInfo.name }}</h5>
+    <p>{{ userInfo.login }}</p>
+    <p>{{ userInfo.bio }}</p>
+    <hr class="w-100" />
+    <div class="w-100 d-flex flex-column justify-content-start">
+      <span class="d-flex">
+        <span class="material-symbols-outlined"> share_location </span>
+        {{ userInfo.location ? userInfo.location : "Não informado" }}
+      </span>
+
+      <span class="d-flex">
+        <span class="material-symbols-outlined"> supervisor_account </span>
+        {{ userInfo.followers }}
+      </span>
+
+      <span class="d-flex">
+        <span class="material-symbols-outlined"> group </span>
+        {{ userInfo.following }}
+      </span>
+    </div>
+  </div>
+
+  <div class="user-infos__repos">
+    <h5>Repositórios</h5>
+
+    <div class="repos-filters d-flex justify-content-between mb-3">
+        <span>
+            <input
+            [(ngModel)]="repoName"
+            (keyup)="searchRepoByName()"
+            placeholder="Pesquisar por nome"
+            class="me-1"
+          />
+          <input
+            [(ngModel)]="repStars"
+            (keyup)="searchRepoByStars()"
+            placeholder="Pesquisar por quantidade de estrelas"
+            class="ms-1"
+          />
+        </span>
+
+        <span>
+            <button class="me-1" (click)="orderRepos('stars')">Ordenar por Estrelas</button>
+            <button class="ms-1" (click)="orderRepos('name')">Ordenar por Nome</button>
+        </span>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-between">
+      <div *ngFor="let repo of githubReposFilter" class="mb-4 repos-card">
+        <h5>{{ repo.name }}</h5>
+        <p>{{ repo.description }}</p>
+        <span class="d-flex">
+
+            <span class="me-3 d-flex align-items-center">
+                <strong>&lt;/&gt;</strong>
+                <p class="mb-0 ms-2">{{ repo.language}}</p>
+              </span> 
+          <span class="me-3 d-flex align-items-center">
+            <span class="material-symbols-outlined"> update </span>
+            <p class="mb-0 ms-2">{{ repo.updated_at | date: "dd/mm/yyyy" }}</p>
+          </span>
+          <span class="d-flex align-items-center">
+            <span class="material-symbols-outlined"> grade </span>
+            <p class="mb-0 ms-2">
+              {{ repo.stargazers_count !== 0 ? repo.stargazers_count : 0 }}
+            </p>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</Section>
