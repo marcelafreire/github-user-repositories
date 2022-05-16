@@ -45,36 +45,6 @@ export class GithubUserSearchComponent {
     // }, 100);
   }
 
-  orderRepos(sortType: string) {
-    const reps = this.githubReposFilter;
-    if (sortType === "name") {
-      this.githubRepos = [...reps].sort((a, b) => {
-        if (a.name !== b.name) {
-          return a.name < b.name ? -1 : 1;
-        } else {
-          return 0;
-        }
-      });
-    } else {
-      this.githubRepos = [...reps].sort(
-        (a, b) => a.stargazers_count - b.stargazers_count
-      );
-    }
-  }
-
-  searchRepoByName() {
-    const reps = this.githubReposFilter;
-    this.githubRepos = reps.filter((rep) =>
-      rep.name.toLowerCase().includes(this.repoName.toLowerCase())
-    );
-  }
-
-  searchRepoByStars() {
-    const reps = this.githubReposFilter;
-    this.githubRepos = reps.filter(
-      (rep) => rep.stargazers_count == this.repStars
-    );
-  }
 
   verificaConexao() {
     window.addEventListener("online", () => {
