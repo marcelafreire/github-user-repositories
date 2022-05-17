@@ -23,28 +23,14 @@ describe("GithubSearchService", () => {
   });
 
   it("Deve obter usuário sem sessão", () => {
-    spyOn(sessionStorage, "getItem").and.returnValue("{}");
     const httpService = spyOn(httpClientService, "get").and.returnValue(
       of(GithubUserSpecUtils.getUser())
     );
-    const storage = spyOn(sessionStorage, "setItem");
 
     service.getUser("marcelafreire").subscribe();
     expect(httpService).toHaveBeenCalledWith(
       "https://api.github.com/users/marcelafreire"
     );
-    expect(storage).toHaveBeenCalledWith(
-      "userinfos",
-      JSON.stringify(GithubUserSpecUtils.getUser())
-    );
-  });
-
-  it("Deve obter usuário da sessão", () => {
-    const storage = spyOn(sessionStorage, "getItem").and.returnValue(
-      JSON.stringify(GithubUserSpecUtils.getUser())
-    );
-    service.getUser("marcelafreire");
-    expect(storage).toHaveBeenCalledWith("userinfos");
   });
 
   it("Deve obter repositórios", () => {
