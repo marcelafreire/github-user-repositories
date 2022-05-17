@@ -1,14 +1,26 @@
-# GithubUserRepositories
+# Sobre
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
+Aplicação para busca de usuários do github.
 
-## Development server
+## Como rodar o projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
 
-## Code scaffolding
+#Clonar repositório
+$ git clone https://github.com/marcelafreire/github-user-repositories.git
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#Entrar no diretório
+$ cd github-user-repositories.git
+
+#Instalar dependências
+$ npm install
+
+#Iniciar aplicação 
+$ ng serve
+
+````
+
+## Testes
 
 ## Build
 
