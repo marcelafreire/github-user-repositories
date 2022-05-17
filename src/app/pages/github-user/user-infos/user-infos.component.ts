@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GithubRepos } from 'src/app/shared/models/githubrepos.model';
 import { GithubUser } from 'src/app/shared/models/githubuser.model';
 
