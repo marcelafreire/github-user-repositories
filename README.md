@@ -31,6 +31,7 @@ Acesse http://localhost:4200/ para ver o projeto no browser.
 ````
 
 ## Testes
+Para rodar os testes:
 
 ```bash
 
