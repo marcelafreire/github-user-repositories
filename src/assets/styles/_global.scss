@@ -2,7 +2,6 @@
 $bp-large: 68.75em;
 $bp-medium: 768px;
 $bp-small: 576px;
-$bp-smallest: 31.25em;
 
 $gray400: #65605c;
 $gray300: #b4b4b4;
@@ -36,7 +35,6 @@ body {
   line-height: 1.6;
   color: var(--color-grey-dark-1);
   background-color: #f6f8ff;
-  padding: 5%;
 
   button {
     outline: none;
