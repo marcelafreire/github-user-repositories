@@ -26,6 +26,8 @@ $ npm install
 #Iniciar aplicação 
 $ ng serve
 
+Acesse http://localhost:4200/ para ver o projeto no browser.
+
 ````
 
 ## Testes
