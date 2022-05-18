@@ -2,6 +2,14 @@
 
 Aplicação para busca de usuários do github.
 
+## O desafio
+
+- informar o nome de um usuário do GitHub e, clicando em um botão ou pressionando Enter, a aplicação faça uma busca e me envie para uma página com o resultado dessa pesquisa, listando os repositórios do usuário localizado. Se o usuário não existir, preciso receber um alerta da aplicação;
+- Receber um feedback de carregamento enquanto a aplicação busca os dados do usuário digitado;
+- Feedback da aplicação quando o usuário inserido no campo de busca não for válido, de acordo com as regras de validação do GitHub;
+- Notificação caso perca a conexão com a internet durante a busca dos dados pela aplicação;
+- Acessar os dados de usuários que já pesquisei de modo offline.
+
 ## Como rodar o projeto
 
 ```bash
@@ -22,18 +30,12 @@ $ ng serve
 
 ## Testes
 
-## Build
+```bash
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#Teste unitário
+$ ng test
 
-## Running unit tests
+#Teste end-to-end
+$ npx cypress open
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+````
